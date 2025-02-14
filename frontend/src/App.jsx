@@ -1,0 +1,23 @@
+import React, { useState } from 'react'
+import Navbar from './components/Navbar/Navbar.jsx'
+import Home from './pages/Home/Home.jsx'
+import { Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer/Footer.jsx'
+import LoginPopup from './components/LoginPopup/LoginPopup.jsx'
+const App = () => {
+    const [showLogin, setshowLogin] = useState(false)
+  return (
+    <>
+      {showLogin? <LoginPopup setshowLogin={setshowLogin} />:<></>}
+      <div className='app'>
+        <Navbar setshowLogin={setshowLogin} ></Navbar>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+        </Routes>
+      </div>
+      <Footer />
+    </>
+  )
+}
+
+export default App
