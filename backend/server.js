@@ -28,6 +28,7 @@ app.use("/api/order",orderRouter)
 app.get("/",(req,res)=>{
     res.send("API working")
 })
+app.get('/health', (req, res) => res.sendStatus(200));
 
 // mongodb+srv://mohithmohan0708:<db_password>@cluster0.mm6le.mongodb.net/?
 
